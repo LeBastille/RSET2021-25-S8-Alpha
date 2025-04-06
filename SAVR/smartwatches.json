@@ -1,0 +1,212 @@
+{
+    "Apple Watch Series 9": {
+        "Display": "1.9-inch Retina",
+        "Battery Life": "18 hours",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 45000
+    },
+    "Samsung Galaxy Watch 6": {
+        "Display": "1.5-inch AMOLED",
+        "Battery Life": "40 hours",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 32000
+    },
+    "Garmin Fenix 7": {
+        "Display": "1.3-inch MIP",
+        "Battery Life": "18 days",
+        "GPS": "Yes",
+        "Water Resistance": "100m",
+        "Price": 75000
+    },
+    "Fitbit Sense 2": {
+        "Display": "1.58-inch AMOLED",
+        "Battery Life": "6 days",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 25000
+    },
+    "Google Pixel Watch 2": {
+        "Display": "1.2-inch AMOLED",
+        "Battery Life": "24 hours",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 35000
+    },
+    "Amazfit GTR 4": {
+        "Display": "1.43-inch AMOLED",
+        "Battery Life": "14 days",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 20000
+    },
+    "Huawei Watch GT 4": {
+        "Display": "1.43-inch AMOLED",
+        "Battery Life": "14 days",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 25000
+    },
+    "Garmin Forerunner 965": {
+        "Display": "1.4-inch AMOLED",
+        "Battery Life": "23 days",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 65000
+    },
+    "OnePlus Watch 2": {
+        "Display": "1.43-inch AMOLED",
+        "Battery Life": "100 hours",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 25000
+    },
+    "Samsung Galaxy Watch 5 Pro": {
+        "Display": "1.4-inch AMOLED",
+        "Battery Life": "80 hours",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 45000
+    },
+    "Apple Watch SE (2023)": {
+        "Display": "1.78-inch Retina",
+        "Battery Life": "18 hours",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 30000
+    },
+    "TicWatch Pro 5": {
+        "Display": "1.43-inch AMOLED + LCD",
+        "Battery Life": "80 hours",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 28000
+    },
+    "Garmin Epix Pro": {
+        "Display": "1.4-inch AMOLED",
+        "Battery Life": "16 days",
+        "GPS": "Yes",
+        "Water Resistance": "100m",
+        "Price": 90000
+    },
+    "Fitbit Versa 4": {
+        "Display": "1.58-inch AMOLED",
+        "Battery Life": "6 days",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 20000
+    },
+    "Garmin Instinct 2X": {
+        "Display": "1.1-inch MIP",
+        "Battery Life": "Endless (Solar)",
+        "GPS": "Yes",
+        "Water Resistance": "100m",
+        "Price": 50000
+    },
+    "Amazfit T-Rex 2": {
+        "Display": "1.39-inch AMOLED",
+        "Battery Life": "24 days",
+        "GPS": "Yes",
+        "Water Resistance": "100m",
+        "Price": 18000
+    },
+    "Suunto 9 Peak Pro": {
+        "Display": "1.2-inch LED",
+        "Battery Life": "21 days",
+        "GPS": "Yes",
+        "Water Resistance": "100m",
+        "Price": 60000
+    },
+    "Huawei Watch Ultimate": {
+        "Display": "1.5-inch AMOLED",
+        "Battery Life": "14 days",
+        "GPS": "Yes",
+        "Water Resistance": "100m",
+        "Price": 75000
+    },
+    "Coros Vertix 2": {
+        "Display": "1.4-inch MIP",
+        "Battery Life": "60 days",
+        "GPS": "Yes",
+        "Water Resistance": "100m",
+        "Price": 65000
+    },
+    "Apple Watch Ultra 2": {
+        "Display": "1.92-inch Retina",
+        "Battery Life": "36 hours",
+        "GPS": "Yes",
+        "Water Resistance": "100m",
+        "Price": 90000
+    },
+    "Garmin Venu 2 Plus": {
+        "Display": "1.3-inch AMOLED",
+        "Battery Life": "9 days",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 45000
+    },
+    "Fossil Gen 6": {
+        "Display": "1.28-inch AMOLED",
+        "Battery Life": "24 hours",
+        "GPS": "Yes",
+        "Water Resistance": "30m",
+        "Price": 22000
+    },
+    "Amazfit Bip 3 Pro": {
+        "Display": "1.69-inch LCD",
+        "Battery Life": "14 days",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 8000
+    },
+    "Garmin Approach S62": {
+        "Display": "1.3-inch MIP",
+        "Battery Life": "14 days",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 55000
+    },
+    "Samsung Galaxy Watch Active 2": {
+        "Display": "1.4-inch AMOLED",
+        "Battery Life": "60 hours",
+        "GPS": "Yes",
+        "Water Resistance": "50m",
+        "Price": 20000
+    },
+    "Huawei Band 8": {
+        "Display": "1.47-inch AMOLED",
+        "Battery Life": "14 days",
+        "GPS": "No",
+        "Water Resistance": "50m",
+        "Price": 5000
+    },
+    "Realme Watch 3 Pro": {
+        "Display": "1.78-inch AMOLED",
+        "Battery Life": "10 days",
+        "GPS": "Yes",
+        "Water Resistance": "30m",
+        "Price": 5000
+    },
+    "Boat Wave Elite": {
+        "Display": "1.69-inch LCD",
+        "Battery Life": "7 days",
+        "GPS": "No",
+        "Water Resistance": "30m",
+        "Price": 3000
+    },
+    "Noise ColorFit Pro 4": {
+        "Display": "1.72-inch LCD",
+        "Battery Life": "7 days",
+        "GPS": "No",
+        "Water Resistance": "30m",
+        "Price": 4000
+    },
+    "Dizo Watch R": {
+        "Display": "1.3-inch AMOLED",
+        "Battery Life": "10 days",
+        "GPS": "No",
+        "Water Resistance": "30m",
+        "Price": 4000
+    }
+} 

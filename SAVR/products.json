@@ -1,0 +1,205 @@
+{
+    "Google Pixel 9 Pro XL": {
+        "Processor": "Tensor G4",
+        "Battery Life": 5000,
+        "Screen": "AMOLED",
+        "Camera": 108,
+        "Price": 110000
+    },
+    "Samsung Galaxy S24 Ultra": {
+        "Processor": "Exynos 2300",
+        "Battery Life": 5000,
+        "Screen": "Dynamic AMOLED",
+        "Camera": 200,
+        "Price": 120000
+    },
+    "Apple iPhone 16 Pro Max": {
+        "Processor": "A19 Bionic",
+        "Battery Life": 4352,
+        "Screen": "Super Retina XDR OLED",
+        "Camera": 48,
+        "Price": 150000
+    },
+    "Huawei Pura 70 Ultra": {
+        "Processor": "Kirin 9010",
+        "Battery Life": 5000,
+        "Screen": "OLED",
+        "Camera": 108,
+        "Price": 130000
+    },
+    "OnePlus 12": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 4800,
+        "Screen": "Fluid AMOLED",
+        "Camera": 50,
+        "Price": 75000
+    },
+    "Xiaomi 14": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 4600,
+        "Screen": "AMOLED",
+        "Camera": 50,
+        "Price": 70000
+    },
+    "Realme GT 7 Pro": {
+        "Processor": "Dimensity 9200",
+        "Battery Life": 5000,
+        "Screen": "Super AMOLED",
+        "Camera": 64,
+        "Price": 45000
+    },
+    "Sony Xperia 1 V": {
+        "Processor": "Snapdragon 8 Gen 2",
+        "Battery Life": 4500,
+        "Screen": "OLED",
+        "Camera": 48,
+        "Price": 95000
+    },
+    "LG Velvet 2 Pro": {
+        "Processor": "Snapdragon 888",
+        "Battery Life": 4500,
+        "Screen": "P-OLED",
+        "Camera": 64,
+        "Price": 85000
+    },
+    "Asus ROG Phone 7": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 6000,
+        "Screen": "AMOLED",
+        "Camera": 64,
+        "Price": 90000
+    },
+    "Nokia X50 Pro": {
+        "Processor": "Snapdragon 775",
+        "Battery Life": 5000,
+        "Screen": "PureDisplay V4",
+        "Camera": 108,
+        "Price": 35000
+    },
+    "Motorola Edge 40 Pro": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 4800,
+        "Screen": "OLED",
+        "Camera": 108,
+        "Price": 65000
+    },
+    "Oppo Find X6 Pro": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 5000,
+        "Screen": "AMOLED",
+        "Camera": 50,
+        "Price": 80000
+    },
+    "Vivo X90 Pro+": {
+        "Processor": "Dimensity 9200",
+        "Battery Life": 4700,
+        "Screen": "AMOLED",
+        "Camera": 50,
+        "Price": 85000
+    },
+    "ZTE Axon 40 Ultra": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 5000,
+        "Screen": "AMOLED",
+        "Camera": 64,
+        "Price": 75000
+    },
+    "Lenovo Legion Phone 3 Pro": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 5500,
+        "Screen": "AMOLED",
+        "Camera": 64,
+        "Price": 70000
+    },
+    "Google Pixel 8a": {
+        "Processor": "Tensor G3",
+        "Battery Life": 4500,
+        "Screen": "OLED",
+        "Camera": 12,
+        "Price": 49999
+    },
+    "Samsung Galaxy A35 5G": {
+        "Processor": "Exynos 1280",
+        "Battery Life": 5000,
+        "Screen": "Super AMOLED",
+        "Camera": 64,
+        "Price": 32999
+    },
+    "OnePlus 12R": {
+        "Processor": "Snapdragon 8 Gen 2",
+        "Battery Life": 5000,
+        "Screen": "AMOLED",
+        "Camera": 50,
+        "Price": 45000
+    },
+    "Nothing Phone 3a Pro": {
+        "Processor": "Snapdragon 7 Gen 2",
+        "Battery Life": 4500,
+        "Screen": "OLED",
+        "Camera": 50,
+        "Price": 29999
+    },
+    "CMF Phone 1": {
+        "Processor": "MediaTek Helio G99",
+        "Battery Life": 5000,
+        "Screen": "IPS LCD",
+        "Camera": 48,
+        "Price": 15999
+    },
+    "OnePlus Nord 4": {
+        "Processor": "Snapdragon 7 Gen 3",
+        "Battery Life": 4500,
+        "Screen": "AMOLED",
+        "Camera": 50,
+        "Price": 25000
+    },
+    "Samsung Galaxy A55": {
+        "Processor": "Exynos 1380",
+        "Battery Life": 5000,
+        "Screen": "Super AMOLED",
+        "Camera": 64,
+        "Price": 35000
+    },
+    "Poco F7 Pro": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 4700,
+        "Screen": "AMOLED",
+        "Camera": 50,
+        "Price": 25998
+    },
+    "Honor Magic6 Pro": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 5000,
+        "Screen": "OLED",
+        "Camera": 108,
+        "Price": 69999
+    },
+    "iPhone 16": {
+        "Processor": "A19 Bionic",
+        "Battery Life": 4000,
+        "Screen": "Super Retina XDR OLED",
+        "Camera": 12,
+        "Price": 120000
+    },
+    "Samsung Galaxy S25": {
+        "Processor": "Exynos 2400",
+        "Battery Life": 5000,
+        "Screen": "Dynamic AMOLED",
+        "Camera": 108,
+        "Price": 100000
+    },
+    "OnePlus Open": {
+        "Processor": "Snapdragon 8 Gen 3",
+        "Battery Life": 4800,
+        "Screen": "AMOLED",
+        "Camera": 50,
+        "Price": 85000
+    },
+    "iPhone 16e": {
+        "Processor": "A19 Bionic",
+        "Battery Life": 3800,
+        "Screen": "Liquid Retina HD",
+        "Camera": 12,
+        "Price": 90000
+    }
+} 

@@ -1,0 +1,669 @@
+{
+    "Apple AirPods Pro 2": {
+        "Driver Size": "Custom Apple",
+        "Battery Life": "6 hours",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 24999,
+            "flipkart": 23999,
+            "croma": 24499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 25999},
+            {"date": "2023-02-01", "price": 24999},
+            {"date": "2023-03-01", "price": 24499},
+            {"date": "2023-04-01", "price": 23999},
+            {"date": "2023-05-01", "price": 24999},
+            {"date": "2023-06-01", "price": 24499},
+            {"date": "2023-07-01", "price": 23999},
+            {"date": "2023-08-01", "price": 24999},
+            {"date": "2023-09-01", "price": 24499},
+            {"date": "2023-10-01", "price": 23999}
+        ]
+    },
+    "Sony WF-1000XM5": {
+        "Driver Size": "11mm + 6mm Dual",
+        "Battery Life": "8 hours",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 19999,
+            "flipkart": 18999,
+            "croma": 19499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 20999},
+            {"date": "2023-02-01", "price": 19999},
+            {"date": "2023-03-01", "price": 19499},
+            {"date": "2023-04-01", "price": 18999},
+            {"date": "2023-05-01", "price": 19999},
+            {"date": "2023-06-01", "price": 19499},
+            {"date": "2023-07-01", "price": 18999},
+            {"date": "2023-08-01", "price": 19999},
+            {"date": "2023-09-01", "price": 19499},
+            {"date": "2023-10-01", "price": 18999}
+        ]
+    },
+    "Bose QuietComfort Earbuds II": {
+        "Driver Size": "Custom Bose",
+        "Battery Life": "6 hours (24h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 25999,
+            "flipkart": 24999,
+            "croma": 25499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 26999},
+            {"date": "2023-02-01", "price": 25999},
+            {"date": "2023-03-01", "price": 25499},
+            {"date": "2023-04-01", "price": 24999},
+            {"date": "2023-05-01", "price": 25999},
+            {"date": "2023-06-01", "price": 25499},
+            {"date": "2023-07-01", "price": 24999},
+            {"date": "2023-08-01", "price": 25999},
+            {"date": "2023-09-01", "price": 25499},
+            {"date": "2023-10-01", "price": 24999}
+        ]
+    },
+    "Samsung Galaxy Buds 2 Pro": {
+        "Driver Size": "10mm Dual Dynamic",
+        "Battery Life": "8 hours (29h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX7",
+        "Price": {
+            "amazon": 17999,
+            "flipkart": 16999,
+            "croma": 17499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 18999},
+            {"date": "2023-02-01", "price": 17999},
+            {"date": "2023-03-01", "price": 17499},
+            {"date": "2023-04-01", "price": 16999},
+            {"date": "2023-05-01", "price": 17999},
+            {"date": "2023-06-01", "price": 17499},
+            {"date": "2023-07-01", "price": 16999},
+            {"date": "2023-08-01", "price": 17999},
+            {"date": "2023-09-01", "price": 17499},
+            {"date": "2023-10-01", "price": 16999}
+        ]
+    },
+    "Jabra Elite 7 Pro": {
+        "Driver Size": "6mm Dynamic",
+        "Battery Life": "8 hours (30h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IP57",
+        "Price": {
+            "amazon": 17999,
+            "flipkart": 16999,
+            "croma": 17499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 18999},
+            {"date": "2023-02-01", "price": 17999},
+            {"date": "2023-03-01", "price": 17499},
+            {"date": "2023-04-01", "price": 16999},
+            {"date": "2023-05-01", "price": 17999},
+            {"date": "2023-06-01", "price": 17499},
+            {"date": "2023-07-01", "price": 16999},
+            {"date": "2023-08-01", "price": 17999},
+            {"date": "2023-09-01", "price": 17499},
+            {"date": "2023-10-01", "price": 16999}
+        ]
+    },
+    "Sennheiser Momentum True Wireless 3": {
+        "Driver Size": "7mm Dynamic",
+        "Battery Life": "7 hours (28h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 21999,
+            "flipkart": 20999,
+            "croma": 21499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 22999},
+            {"date": "2023-02-01", "price": 21999},
+            {"date": "2023-03-01", "price": 21499},
+            {"date": "2023-04-01", "price": 20999},
+            {"date": "2023-05-01", "price": 21999},
+            {"date": "2023-06-01", "price": 21499},
+            {"date": "2023-07-01", "price": 20999},
+            {"date": "2023-08-01", "price": 21999},
+            {"date": "2023-09-01", "price": 21499},
+            {"date": "2023-10-01", "price": 20999}
+        ]
+    },
+    "Google Pixel Buds Pro": {
+        "Driver Size": "11mm Dynamic",
+        "Battery Life": "11 hours (31h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 16999,
+            "flipkart": 15999,
+            "croma": 16499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 17999},
+            {"date": "2023-02-01", "price": 16999},
+            {"date": "2023-03-01", "price": 16499},
+            {"date": "2023-04-01", "price": 15999},
+            {"date": "2023-05-01", "price": 16999},
+            {"date": "2023-06-01", "price": 16499},
+            {"date": "2023-07-01", "price": 15999},
+            {"date": "2023-08-01", "price": 16999},
+            {"date": "2023-09-01", "price": 16499},
+            {"date": "2023-10-01", "price": 15999}
+        ]
+    },
+    "OnePlus Buds Pro 2": {
+        "Driver Size": "11mm + 6mm Dual",
+        "Battery Life": "9 hours (39h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IP55",
+        "Price": {
+            "amazon": 11999,
+            "flipkart": 10999,
+            "croma": 11499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 12999},
+            {"date": "2023-02-01", "price": 11999},
+            {"date": "2023-03-01", "price": 11499},
+            {"date": "2023-04-01", "price": 10999},
+            {"date": "2023-05-01", "price": 11999},
+            {"date": "2023-06-01", "price": 11499},
+            {"date": "2023-07-01", "price": 10999},
+            {"date": "2023-08-01", "price": 11999},
+            {"date": "2023-09-01", "price": 11499},
+            {"date": "2023-10-01", "price": 10999}
+        ]
+    },
+    "Nothing Ear (2)": {
+        "Driver Size": "11.6mm Dynamic",
+        "Battery Life": "6 hours (36h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IP54",
+        "Price": {
+            "amazon": 11999,
+            "flipkart": 10999,
+            "croma": 11499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 12999},
+            {"date": "2023-02-01", "price": 11999},
+            {"date": "2023-03-01", "price": 11499},
+            {"date": "2023-04-01", "price": 10999},
+            {"date": "2023-05-01", "price": 11999},
+            {"date": "2023-06-01", "price": 11499},
+            {"date": "2023-07-01", "price": 10999},
+            {"date": "2023-08-01", "price": 11999},
+            {"date": "2023-09-01", "price": 11499},
+            {"date": "2023-10-01", "price": 10999}
+        ]
+    },
+    "Beats Fit Pro": {
+        "Driver Size": "Custom Apple",
+        "Battery Life": "6 hours (24h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 19999,
+            "flipkart": 18999,
+            "croma": 19499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 20999},
+            {"date": "2023-02-01", "price": 19999},
+            {"date": "2023-03-01", "price": 19499},
+            {"date": "2023-04-01", "price": 18999},
+            {"date": "2023-05-01", "price": 19999},
+            {"date": "2023-06-01", "price": 19499},
+            {"date": "2023-07-01", "price": 18999},
+            {"date": "2023-08-01", "price": 19999},
+            {"date": "2023-09-01", "price": 19499},
+            {"date": "2023-10-01", "price": 18999}
+        ]
+    },
+    "Sony LinkBuds S": {
+        "Driver Size": "5mm Dynamic",
+        "Battery Life": "6 hours (20h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 14999,
+            "flipkart": 13999,
+            "croma": 14499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 15999},
+            {"date": "2023-02-01", "price": 14999},
+            {"date": "2023-03-01", "price": 14499},
+            {"date": "2023-04-01", "price": 13999},
+            {"date": "2023-05-01", "price": 14999},
+            {"date": "2023-06-01", "price": 14499},
+            {"date": "2023-07-01", "price": 13999},
+            {"date": "2023-08-01", "price": 14999},
+            {"date": "2023-09-01", "price": 14499},
+            {"date": "2023-10-01", "price": 13999}
+        ]
+    },
+    "Anker Soundcore Liberty 4": {
+        "Driver Size": "9.2mm Dynamic",
+        "Battery Life": "9 hours (28h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 9999,
+            "flipkart": 8999,
+            "croma": 9499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 10999},
+            {"date": "2023-02-01", "price": 9999},
+            {"date": "2023-03-01", "price": 9499},
+            {"date": "2023-04-01", "price": 8999},
+            {"date": "2023-05-01", "price": 9999},
+            {"date": "2023-06-01", "price": 9499},
+            {"date": "2023-07-01", "price": 8999},
+            {"date": "2023-08-01", "price": 9999},
+            {"date": "2023-09-01", "price": 9499},
+            {"date": "2023-10-01", "price": 8999}
+        ]
+    },
+    "Realme Buds Air 3": {
+        "Driver Size": "10mm Dynamic",
+        "Battery Life": "5.5 hours (30h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX5",
+        "Price": {
+            "amazon": 4999,
+            "flipkart": 4499,
+            "croma": 4749
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 5499},
+            {"date": "2023-02-01", "price": 4999},
+            {"date": "2023-03-01", "price": 4749},
+            {"date": "2023-04-01", "price": 4499},
+            {"date": "2023-05-01", "price": 4999},
+            {"date": "2023-06-01", "price": 4749},
+            {"date": "2023-07-01", "price": 4499},
+            {"date": "2023-08-01", "price": 4999},
+            {"date": "2023-09-01", "price": 4749},
+            {"date": "2023-10-01", "price": 4499}
+        ]
+    },
+    "Redmi Buds 4 Pro": {
+        "Driver Size": "10mm + 6mm Dual",
+        "Battery Life": "9 hours (36h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IP54",
+        "Price": {
+            "amazon": 6999,
+            "flipkart": 6499,
+            "croma": 6749
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 7499},
+            {"date": "2023-02-01", "price": 6999},
+            {"date": "2023-03-01", "price": 6749},
+            {"date": "2023-04-01", "price": 6499},
+            {"date": "2023-05-01", "price": 6999},
+            {"date": "2023-06-01", "price": 6749},
+            {"date": "2023-07-01", "price": 6499},
+            {"date": "2023-08-01", "price": 6999},
+            {"date": "2023-09-01", "price": 6749},
+            {"date": "2023-10-01", "price": 6499}
+        ]
+    },
+    "Oppo Enco X2": {
+        "Driver Size": "11mm + 6mm Dual",
+        "Battery Life": "9.5 hours (40h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IP54",
+        "Price": {
+            "amazon": 10999,
+            "flipkart": 9999,
+            "croma": 10499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 11999},
+            {"date": "2023-02-01", "price": 10999},
+            {"date": "2023-03-01", "price": 10499},
+            {"date": "2023-04-01", "price": 9999},
+            {"date": "2023-05-01", "price": 10999},
+            {"date": "2023-06-01", "price": 10499},
+            {"date": "2023-07-01", "price": 9999},
+            {"date": "2023-08-01", "price": 10999},
+            {"date": "2023-09-01", "price": 10499},
+            {"date": "2023-10-01", "price": 9999}
+        ]
+    },
+    "JBL Live Pro 2": {
+        "Driver Size": "11mm Dynamic",
+        "Battery Life": "10 hours (40h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX5",
+        "Price": {
+            "amazon": 12999,
+            "flipkart": 11999,
+            "croma": 12499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 13999},
+            {"date": "2023-02-01", "price": 12999},
+            {"date": "2023-03-01", "price": 12499},
+            {"date": "2023-04-01", "price": 11999},
+            {"date": "2023-05-01", "price": 12999},
+            {"date": "2023-06-01", "price": 12499},
+            {"date": "2023-07-01", "price": 11999},
+            {"date": "2023-08-01", "price": 12999},
+            {"date": "2023-09-01", "price": 12499},
+            {"date": "2023-10-01", "price": 11999}
+        ]
+    },
+    "Skullcandy Indy ANC": {
+        "Driver Size": "12mm Dynamic",
+        "Battery Life": "5 hours (19h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IP55",
+        "Price": {
+            "amazon": 8999,
+            "flipkart": 8499,
+            "croma": 8749
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 9499},
+            {"date": "2023-02-01", "price": 8999},
+            {"date": "2023-03-01", "price": 8749},
+            {"date": "2023-04-01", "price": 8499},
+            {"date": "2023-05-01", "price": 8999},
+            {"date": "2023-06-01", "price": 8749},
+            {"date": "2023-07-01", "price": 8499},
+            {"date": "2023-08-01", "price": 8999},
+            {"date": "2023-09-01", "price": 8749},
+            {"date": "2023-10-01", "price": 8499}
+        ]
+    },
+    "SoundPEATS Air3 Pro": {
+        "Driver Size": "12mm Dynamic",
+        "Battery Life": "6 hours (24h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 6999,
+            "flipkart": 6499,
+            "croma": 6749
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 7499},
+            {"date": "2023-02-01", "price": 6999},
+            {"date": "2023-03-01", "price": 6749},
+            {"date": "2023-04-01", "price": 6499},
+            {"date": "2023-05-01", "price": 6999},
+            {"date": "2023-06-01", "price": 6749},
+            {"date": "2023-07-01", "price": 6499},
+            {"date": "2023-08-01", "price": 6999},
+            {"date": "2023-09-01", "price": 6749},
+            {"date": "2023-10-01", "price": 6499}
+        ]
+    },
+    "Huawei FreeBuds Pro 2": {
+        "Driver Size": "11mm + Planar",
+        "Battery Life": "6 hours (30h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IP54",
+        "Price": {
+            "amazon": 13999,
+            "flipkart": 12999,
+            "croma": 13499
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 14999},
+            {"date": "2023-02-01", "price": 13999},
+            {"date": "2023-03-01", "price": 13499},
+            {"date": "2023-04-01", "price": 12999},
+            {"date": "2023-05-01", "price": 13999},
+            {"date": "2023-06-01", "price": 13499},
+            {"date": "2023-07-01", "price": 12999},
+            {"date": "2023-08-01", "price": 13999},
+            {"date": "2023-09-01", "price": 13499},
+            {"date": "2023-10-01", "price": 12999}
+        ]
+    },
+    "Boat Airdopes 441": {
+        "Driver Size": "6mm Dynamic",
+        "Battery Life": "5 hours (25h w/ case)",
+        "Noise Cancellation": "Passive",
+        "Water Resistance": "IPX7",
+        "Price": {
+            "amazon": 2999,
+            "flipkart": 2799,
+            "croma": 2899
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 3499},
+            {"date": "2023-02-01", "price": 2999},
+            {"date": "2023-03-01", "price": 2899},
+            {"date": "2023-04-01", "price": 2799},
+            {"date": "2023-05-01", "price": 2999},
+            {"date": "2023-06-01", "price": 2899},
+            {"date": "2023-07-01", "price": 2799},
+            {"date": "2023-08-01", "price": 2999},
+            {"date": "2023-09-01", "price": 2899},
+            {"date": "2023-10-01", "price": 2799}
+        ]
+    },
+    "Noise Air Buds Pro 2": {
+        "Driver Size": "10mm Dynamic",
+        "Battery Life": "6.5 hours (30h w/ case)",
+        "Noise Cancellation": "Active",
+        "Water Resistance": "IPX5",
+        "Price": {
+            "amazon": 3999,
+            "flipkart": 3799,
+            "croma": 3899
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 4499},
+            {"date": "2023-02-01", "price": 3999},
+            {"date": "2023-03-01", "price": 3899},
+            {"date": "2023-04-01", "price": 3799},
+            {"date": "2023-05-01", "price": 3999},
+            {"date": "2023-06-01", "price": 3899},
+            {"date": "2023-07-01", "price": 3799},
+            {"date": "2023-08-01", "price": 3999},
+            {"date": "2023-09-01", "price": 3899},
+            {"date": "2023-10-01", "price": 3799}
+        ]
+    },
+    "Boult Audio AirBass XPods Pro": {
+        "Driver Size": "10mm Dynamic",
+        "Battery Life": "6 hours (32h w/ case)",
+        "Noise Cancellation": "Passive",
+        "Water Resistance": "IPX5",
+        "Price": {
+            "amazon": 2499,
+            "flipkart": 2299,
+            "croma": 2399
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 2999},
+            {"date": "2023-02-01", "price": 2499},
+            {"date": "2023-03-01", "price": 2399},
+            {"date": "2023-04-01", "price": 2299},
+            {"date": "2023-05-01", "price": 2499},
+            {"date": "2023-06-01", "price": 2399},
+            {"date": "2023-07-01", "price": 2299},
+            {"date": "2023-08-01", "price": 2499},
+            {"date": "2023-09-01", "price": 2399},
+            {"date": "2023-10-01", "price": 2299}
+        ]
+    },
+    "Wings Phantom 850": {
+        "Driver Size": "13mm Dynamic",
+        "Battery Life": "8 hours (50h w/ case)",
+        "Noise Cancellation": "Passive",
+        "Water Resistance": "IPX5",
+        "Price": {
+            "amazon": 3499,
+            "flipkart": 3299,
+            "croma": 3399
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 3999},
+            {"date": "2023-02-01", "price": 3499},
+            {"date": "2023-03-01", "price": 3399},
+            {"date": "2023-04-01", "price": 3299},
+            {"date": "2023-05-01", "price": 3499},
+            {"date": "2023-06-01", "price": 3399},
+            {"date": "2023-07-01", "price": 3299},
+            {"date": "2023-08-01", "price": 3499},
+            {"date": "2023-09-01", "price": 3399},
+            {"date": "2023-10-01", "price": 3299}
+        ]
+    },
+    "Ptron Bassbuds Jade": {
+        "Driver Size": "10mm Dynamic",
+        "Battery Life": "5 hours (40h w/ case)",
+        "Noise Cancellation": "Passive",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 1999,
+            "flipkart": 1899,
+            "croma": 1949
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 2499},
+            {"date": "2023-02-01", "price": 1999},
+            {"date": "2023-03-01", "price": 1949},
+            {"date": "2023-04-01", "price": 1899},
+            {"date": "2023-05-01", "price": 1999},
+            {"date": "2023-06-01", "price": 1949},
+            {"date": "2023-07-01", "price": 1899},
+            {"date": "2023-08-01", "price": 1999},
+            {"date": "2023-09-01", "price": 1949},
+            {"date": "2023-10-01", "price": 1899}
+        ]
+    },
+    "Mivi DuoPods A350": {
+        "Driver Size": "13mm Dynamic",
+        "Battery Life": "8.5 hours (50h w/ case)",
+        "Noise Cancellation": "Passive",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 2499,
+            "flipkart": 2299,
+            "croma": 2399
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 2999},
+            {"date": "2023-02-01", "price": 2499},
+            {"date": "2023-03-01", "price": 2399},
+            {"date": "2023-04-01", "price": 2299},
+            {"date": "2023-05-01", "price": 2499},
+            {"date": "2023-06-01", "price": 2399},
+            {"date": "2023-07-01", "price": 2299},
+            {"date": "2023-08-01", "price": 2499},
+            {"date": "2023-09-01", "price": 2399},
+            {"date": "2023-10-01", "price": 2299}
+        ]
+    },
+    "Fire-Boltt FirePods Polaris": {
+        "Driver Size": "12mm Dynamic",
+        "Battery Life": "6 hours (20h w/ case)",
+        "Noise Cancellation": "Passive",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 3499,
+            "flipkart": 3299,
+            "croma": 3399
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 3999},
+            {"date": "2023-02-01", "price": 3499},
+            {"date": "2023-03-01", "price": 3399},
+            {"date": "2023-04-01", "price": 3299},
+            {"date": "2023-05-01", "price": 3499},
+            {"date": "2023-06-01", "price": 3399},
+            {"date": "2023-07-01", "price": 3299},
+            {"date": "2023-08-01", "price": 3499},
+            {"date": "2023-09-01", "price": 3399},
+            {"date": "2023-10-01", "price": 3299}
+        ]
+    },
+    "Hammer Airflow Pro": {
+        "Driver Size": "10mm Dynamic",
+        "Battery Life": "6 hours (35h w/ case)",
+        "Noise Cancellation": "Passive",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 2999,
+            "flipkart": 2799,
+            "croma": 2899
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 3499},
+            {"date": "2023-02-01", "price": 2999},
+            {"date": "2023-03-01", "price": 2899},
+            {"date": "2023-04-01", "price": 2799},
+            {"date": "2023-05-01", "price": 2999},
+            {"date": "2023-06-01", "price": 2899},
+            {"date": "2023-07-01", "price": 2799},
+            {"date": "2023-08-01", "price": 2999},
+            {"date": "2023-09-01", "price": 2899},
+            {"date": "2023-10-01", "price": 2799}
+        ]
+    },
+    "Dizo Buds Z Pro": {
+        "Driver Size": "10mm Dynamic",
+        "Battery Life": "7 hours (32h w/ case)",
+        "Noise Cancellation": "Passive",
+        "Water Resistance": "IPX4",
+        "Price": {
+            "amazon": 3999,
+            "flipkart": 3799,
+            "croma": 3899
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 4499},
+            {"date": "2023-02-01", "price": 3999},
+            {"date": "2023-03-01", "price": 3899},
+            {"date": "2023-04-01", "price": 3799},
+            {"date": "2023-05-01", "price": 3999},
+            {"date": "2023-06-01", "price": 3899},
+            {"date": "2023-07-01", "price": 3799},
+            {"date": "2023-08-01", "price": 3999},
+            {"date": "2023-09-01", "price": 3899},
+            {"date": "2023-10-01", "price": 3799}
+        ]
+    },
+    "Wings Phantom 550": {
+        "Driver Size": "12mm Dynamic",
+        "Battery Life": "9 hours (40h w/ case)",
+        "Noise Cancellation": "Passive",
+        "Water Resistance": "IPX5",
+        "Price": {
+            "amazon": 4499,
+            "flipkart": 4299,
+            "croma": 4399
+        },
+        "price_history": [
+            {"date": "2023-01-01", "price": 4999},
+            {"date": "2023-02-01", "price": 4499},
+            {"date": "2023-03-01", "price": 4399},
+            {"date": "2023-04-01", "price": 4299},
+            {"date": "2023-05-01", "price": 4499},
+            {"date": "2023-06-01", "price": 4399},
+            {"date": "2023-07-01", "price": 4299},
+            {"date": "2023-08-01", "price": 4499},
+            {"date": "2023-09-01", "price": 4399},
+            {"date": "2023-10-01", "price": 4299}
+        ]
+    }
+} 

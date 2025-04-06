@@ -1,0 +1,212 @@
+{
+    "Apple MacBook Air (M2, 2022)": {
+        "Processor": "Apple M2",
+        "RAM": "8GB",
+        "Battery Life": "18 hours",
+        "GPU": "Integrated 8-core GPU",
+        "Price": 99900
+    },
+    "Dell XPS 15": {
+        "Processor": "Intel Core i7-13700H",
+        "RAM": "16GB",
+        "Battery Life": "13 hours",
+        "GPU": "NVIDIA GeForce RTX 3050",
+        "Price": 150000
+    },
+    "Lenovo ThinkPad X1 Carbon Gen 11": {
+        "Processor": "Intel Core i7-1365U",
+        "RAM": "16GB",
+        "Battery Life": "15 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 140000
+    },
+    "HP Spectre x360 14": {
+        "Processor": "Intel Core i7-1355U",
+        "RAM": "16GB",
+        "Battery Life": "17 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 135000
+    },
+    "Asus ROG Zephyrus G14": {
+        "Processor": "AMD Ryzen 9 6900HS",
+        "RAM": "16GB",
+        "Battery Life": "10 hours",
+        "GPU": "AMD Radeon RX 6800S",
+        "Price": 160000
+    },
+    "Microsoft Surface Laptop 5": {
+        "Processor": "Intel Core i5-1235U",
+        "RAM": "8GB",
+        "Battery Life": "14 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 110000
+    },
+    "Acer Swift 5": {
+        "Processor": "Intel Core i7-1260P",
+        "RAM": "16GB",
+        "Battery Life": "14 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 95000
+    },
+    "Razer Blade 15": {
+        "Processor": "Intel Core i7-12800H",
+        "RAM": "16GB",
+        "Battery Life": "6 hours",
+        "GPU": "NVIDIA GeForce RTX 3070 Ti",
+        "Price": 220000
+    },
+    "LG Gram 17": {
+        "Processor": "Intel Core i7-1260P",
+        "RAM": "16GB",
+        "Battery Life": "19 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 130000
+    },
+    "Samsung Galaxy Book3 Ultra": {
+        "Processor": "Intel Core i9-13900H",
+        "RAM": "32GB",
+        "Battery Life": "16 hours",
+        "GPU": "NVIDIA GeForce RTX 4070",
+        "Price": 180000
+    },
+    "Lenovo IdeaPad Duet 5 Chromebook": {
+        "Processor": "Qualcomm Snapdragon 7c Gen 2",
+        "RAM": "8GB",
+        "Battery Life": "15 hours",
+        "GPU": "Integrated Qualcomm Adreno",
+        "Price": 45000
+    },
+    "HP Envy 13": {
+        "Processor": "Intel Core i5-1235U",
+        "RAM": "8GB",
+        "Battery Life": "14 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 85000
+    },
+    "Dell Inspiron 15 3520": {
+        "Processor": "Intel Core i7-1255U",
+        "RAM": "16GB",
+        "Battery Life": "10 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 70000
+    },
+    "Asus ZenBook 14 OLED": {
+        "Processor": "AMD Ryzen 7 5800H",
+        "RAM": "16GB",
+        "Battery Life": "12 hours",
+        "GPU": "Integrated AMD Radeon",
+        "Price": 90000
+    },
+    "Microsoft Surface Pro 9": {
+        "Processor": "Intel Core i7-1255U",
+        "RAM": "16GB",
+        "Battery Life": "13 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 120000
+    },
+    "Acer Aspire 5": {
+        "Processor": "Intel Core i5-1235U",
+        "RAM": "8GB",
+        "Battery Life": "11 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 60000
+    },
+    "Lenovo Yoga 9i": {
+        "Processor": "Intel Core i7-1360P",
+        "RAM": "16GB",
+        "Battery Life": "14 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 125000
+    },
+    "HP Pavilion Aero 13": {
+        "Processor": "AMD Ryzen 7 7730U",
+        "RAM": "16GB",
+        "Battery Life": "11 hours",
+        "GPU": "Integrated AMD Radeon",
+        "Price": 80000
+    },
+    "Dell G15 Gaming Laptop": {
+        "Processor": "Intel Core i7-12700H",
+        "RAM": "16GB",
+        "Battery Life": "8 hours",
+        "GPU": "NVIDIA GeForce RTX 3060",
+        "Price": 120000
+    },
+    "Asus VivoBook S15": {
+        "Processor": "Intel Core i5-1240P",
+        "RAM": "8GB",
+        "Battery Life": "10 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 70000
+    },
+    "Apple MacBook Pro 16-inch (M3 Pro)": {
+        "Processor": "Apple M3 Pro",
+        "RAM": "16GB",
+        "Battery Life": "22 hours",
+        "GPU": "Integrated 16-core GPU",
+        "Price": 199900
+    },
+    "Lenovo Legion 5 Pro": {
+        "Processor": "AMD Ryzen 7 6800H",
+        "RAM": "16GB",
+        "Battery Life": "9 hours",
+        "GPU": "NVIDIA GeForce RTX 3070",
+        "Price": 150000
+    },
+    "HP Omen 16": {
+        "Processor": "Intel Core i7-12700H",
+        "RAM": "16GB",
+        "Battery Life": "7 hours",
+        "GPU": "NVIDIA GeForce RTX 3060",
+        "Price": 135000
+    },
+    "Dell XPS 13 Plus": {
+        "Processor": "Intel Core i7-1280P",
+        "RAM": "16GB",
+        "Battery Life": "12 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 140000
+    },
+    "Asus TUF Dash F15": {
+        "Processor": "Intel Core i7-12650H",
+        "RAM": "16GB",
+        "Battery Life": "10 hours",
+        "GPU": "NVIDIA GeForce RTX 3060",
+        "Price": 110000
+    },
+    "Microsoft Surface Go 4": {
+        "Processor": "Intel Pentium Gold 8505",
+        "RAM": "8GB",
+        "Battery Life": "11 hours",
+        "GPU": "Integrated Intel UHD Graphics",
+        "Price": 50000
+    },
+    "Acer Chromebook Spin 713": {
+        "Processor": "Intel Core i5-1240P",
+        "RAM": "8GB",
+        "Battery Life": "12 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 60000
+    },
+    "Lenovo ThinkBook 14s Yoga": {
+        "Processor": "Intel Core i7-1255U",
+        "RAM": "16GB",
+        "Battery Life": "12 hours",
+        "GPU": "Integrated Intel Iris Xe",
+        "Price": 95000
+    },
+    "HP Victus 16": {
+        "Processor": "AMD Ryzen 7 7840HS",
+        "RAM": "16GB",
+        "Battery Life": "8 hours",
+        "GPU": "NVIDIA GeForce RTX 4060",
+        "Price": 130000
+    },
+    "Asus ROG Strix Scar 17": {
+        "Processor": "AMD Ryzen 9 7945HX",
+        "RAM": "32GB",
+        "Battery Life": "6 hours",
+        "GPU": "NVIDIA GeForce RTX 4080",
+        "Price": 250000
+    }
+} 

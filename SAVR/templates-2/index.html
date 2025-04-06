@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savr - Smart Shopping Decisions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --background-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --border-color: #e9ecef;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links .category-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-links .category-btn {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links .category-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+        }
+
+        .nav-links .category-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links .dropdown-content a {
+            color: var(--secondary-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links .dropdown-content a:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .account-link {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .account-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-color);
+        }
+
+        .search-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 1rem;
+            right: 1rem;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .search-result {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .search-result:last-child {
+            border-bottom: none;
+        }
+
+        .search-result:hover {
+            background-color: var(--background-color);
+        }
+
+        .search-result img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .search-result-info {
+            flex: 1;
+        }
+
+        .search-result-name {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .search-result-price {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .search-result-category {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        /* Rest of your existing styles */
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <div class="logo">SAVR</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <div class="category-dropdown">
+                    <button class="category-btn">Categories ▼</button>
+                    <div class="dropdown-content">
+                        <a href="/phones">Smartphones</a>
+                        <a href="/laptops">Laptops</a>
+                        <a href="/smartwatches">Smartwatches</a>
+                        <a href="/earphones">Earphones</a>
+                    </div>
+                </div>
+                <a href="/compare">Compare</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <a href="/accounts" class="account-link">Account</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <h1>Effortless Comparisons, Smarter Decisions.</h1>
+        <div class="search-container">
+            <input type="text" class="search-bar" id="searchInput" placeholder="Search for products...">
+            <div class="search-dropdown" id="searchDropdown"></div>
+        </div>
+
+        <div class="features" id="features-container">
+            <!-- Dynamic content will be added here -->
+        </div>
+    </main>
+        <!--FOOTER-->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About Savr</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Smartphones</a></li>
+                        <li><a href="#">Tablets</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Help & Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Buying Guide</a></li>
+                        <li><a href="#">Compare Tools</a></li>
+                        <li><a href="#">Support Center</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>© 2024 Savr. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <script>
+            // Function to format price with commas
+            function formatPrice(price) {
+                return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            // Function to create search result item
+            function createSearchResult(product) {
+                const result = document.createElement('div');
+                result.className = 'search-result';
+                result.onclick = () => {
+                    // Redirect to the appropriate detail page based on category
+                    const category = product.category.toLowerCase();
+                    let detailUrl;
+                    switch(category) {
+                        case 'smartphones':
+                            detailUrl = '/phone_detail';
+                            break;
+                        case 'laptops':
+                            detailUrl = '/laptop_detail';
+                            break;
+                        case 'smartwatches':
+                            detailUrl = '/smartwatch_detail';
+                            break;
+                        case 'earphones':
+                            detailUrl = '/earphone_detail';
+                            break;
+                        default:
+                            return;
+                    }
+                    
+                    // Ensure the product name is properly encoded
+                    const encodedName = encodeURIComponent(product.name.trim());
+                    const url = `${detailUrl}?name=${encodedName}`;
+                    
+                    // Log the URL for debugging
+                    console.log('Redirecting to:', url);
+                    
+                    // Redirect to the detail page
+                    window.location.href = url;
+                };
+                
+                result.innerHTML = `
+                    <img src="${product.imageUrl}" alt="${product.name}">
+                    <div class="search-result-info">
+                        <div class="search-result-name">${product.name}</div>
+                        <div class="search-result-price">₹${formatPrice(product.specs.Price)}</div>
+                        <div class="search-result-category">${product.category}</div>
+                    </div>
+                `;
+                return result;
+            }
+
+            // Function to filter products based on search query
+            function filterProducts(products, query) {
+                query = query.toLowerCase();
+                return products.filter(product => 
+                    product.name.toLowerCase().includes(query) ||
+                    product.category.toLowerCase().includes(query)
+                );
+            }
+
+            // Initialize search functionality
+            document.addEventListener('DOMContentLoaded', () => {
+                const searchInput = document.getElementById('searchInput');
+                const searchDropdown = document.getElementById('searchDropdown');
+                let allProducts = [];
+
+                // Fetch all products when page loads
+                fetch('/get_products')
+                    .then(response => response.json())
+                    .then(products => {
+                        allProducts = products;
+                    })
+                    .catch(error => console.error('Error fetching products:', error));
+
+                // Add input event listener for search
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.trim();
+                    
+                    if (query.length < 2) {
+                        searchDropdown.style.display = 'none';
+                        return;
+                    }
+
+                    const filteredProducts = filterProducts(allProducts, query);
+                    
+                    if (filteredProducts.length > 0) {
+                        searchDropdown.innerHTML = '';
+                        filteredProducts.forEach(product => {
+                            searchDropdown.appendChild(createSearchResult(product));
+                        });
+                        searchDropdown.style.display = 'block';
+                    } else {
+                        searchDropdown.style.display = 'none';
+                    }
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+                        searchDropdown.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

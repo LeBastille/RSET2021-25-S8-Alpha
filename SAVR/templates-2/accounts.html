@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - Product Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #FFD93D;
+            --secondary-color: #4A4A4A;
+            --accent-color: #FF6B6B;
+            --background-gradient: linear-gradient(135deg, #fff5d7, #FFD93D);
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--background-gradient);
+            color: var(--secondary-color);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 100px auto 0;
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .sidebar-link:hover {
+            background: #f5f5f5;
+        }
+
+        .sidebar-link.active {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .main-content {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .profile-section {
+            display: none;
+        }
+
+        .profile-section.active {
+            display: block;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .profile-info h2 {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .profile-info p {
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #fff0f0;
+            color: var(--accent-color);
+        }
+
+        .btn-danger:hover {
+            background: #ffe0e0;
+        }
+
+        .danger-zone {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .danger-zone h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .danger-zone p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .favorites-section {
+            display: none;
+        }
+
+        .favorites-section.active {
+            display: block;
+        }
+
+        .favorites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .favorite-item {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .favorite-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            padding: 10px;
+        }
+
+        .favorite-item h3 {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .favorite-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .remove-favorite {
+            color: var(--accent-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .remove-favorite:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: white;
+            padding: 3rem 0;
+            margin-top: 6rem;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        .footer-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #2563eb;
+        }
+
+        .footer-bottom {
+            max-width: 1024px;
+            margin: 2rem auto 0;
+            padding: 1rem;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logout-btn {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 16px;
+            border-radius: 5px;
+            background: #fff0f0;
+            color: var(--accent-color);
+        }
+        
+        .logout-btn:hover {
+            background: #ffe0e0;
+        }
+        
+        .password-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .password-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .password-field {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        
+        .toggle-password:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links .category-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-links .category-btn {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links .category-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+        }
+
+        .nav-links .category-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links .dropdown-content a {
+            color: var(--secondary-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links .dropdown-content a:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .account-link {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .account-link:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <div class="logo">SAVR</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <div class="category-dropdown">
+                    <button class="category-btn">Categories ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#" data-category="Smartphones">Smartphones</a>
+                        <a href="#" data-category="Smartwatches">Smartwatches</a>
+                        <a href="#" data-category="Earphones">Earphones</a>
+                        <a href="#" data-category="Laptops">Laptops</a>
+                    </div>
+                </div>
+                <a href="{{ url_for('compare') }}">Compare</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <a href="{{ url_for('accounts') }}" class="account-link">Account</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Account Settings</h2>
+            <div class="sidebar-links">
+                <a href="#" class="sidebar-link active" onclick="showContent('profile')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    My Profile
+                </a>
+                <a href="#" class="sidebar-link" onclick="showContent('favorites')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    Favorites
+                </a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="profile-section active">
+                <div class="profile-header">
+                    <div class="avatar">{{ user.username[0].upper() }}</div>
+                    <div class="profile-info">
+                        <h2>{{ user.username }}</h2>
+                        <p>{{ user.email }}</p>
+                    </div>
+                </div>
+
+                <form method="POST" action="{{ url_for('update_profile') }}">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" value="{{ user.username }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="{{ user.email }}" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+
+                <div class="password-section">
+                    <h3>Update Password</h3>
+                    <form method="POST" action="{{ url_for('update_password') }}">
+                        <div class="form-group">
+                            <label for="current_password">Current Password</label>
+                            <div class="password-field">
+                                <input type="password" id="current_password" name="current_password" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('current_password')">👁️</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="new_password">New Password</label>
+                            <div class="password-field">
+                                <input type="password" id="new_password" name="new_password" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('new_password')">👁️</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm New Password</label>
+                            <div class="password-field">
+                                <input type="password" id="confirm_password" name="confirm_password" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')">👁️</button>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="danger-zone">
+                    <h3>Danger Zone</h3>
+                    <p>Once you delete your account, there is no going back. Please be certain.</p>
+                    <form method="POST" action="{{ url_for('delete_account') }}" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+                        <button type="submit" class="btn btn-danger">Delete Account</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="favorites-section">
+                <h2>My Favorites</h2>
+                <div class="favorites-grid">
+                    {% if user.favorites %}
+                        {% for favorite in user.favorites %}
+                            <div class="favorite-item">
+                                <img src="{{ favorite.product_image }}" alt="{{ favorite.product_name }}">
+                                <h3>{{ favorite.product_name }}</h3>
+                                <p>Category: {{ favorite.product_category }}</p>
+                                <p>Price: ₹{{ "%.2f"|format(favorite.product_price) }}</p>
+                                <button class="remove-favorite" onclick="removeFavorite('{{ favorite.product_name }}', '{{ favorite.product_category }}')">Remove from favorites</button>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No favorites yet. Start adding products to your favorites!</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Savr</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Smartphones</a></li>
+                    <li><a href="#">Tablets</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Buying Guide</a></li>
+                    <li><a href="#">Compare Tools</a></li>
+                    <li><a href="#">Support Center</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Savr. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showContent(contentType) {
+            // Hide all content sections
+            document.querySelectorAll('.profile-section, .favorites-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected content
+            document.querySelector(`.${contentType}-section`).classList.add('active');
+
+            // Update active state of sidebar links
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+        }
+
+        async function removeFavorite(productName, productCategory) {
+            try {
+                const response = await fetch('/remove_from_favorites', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: productName,
+                        category: productCategory
+                    })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    // Refresh the page to show updated favorites
+                    window.location.reload();
+                } else {
+                    alert('Error removing from favorites: ' + data.error);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error removing from favorites');
+            }
+        }
+    </script>
+</body>
+</html>

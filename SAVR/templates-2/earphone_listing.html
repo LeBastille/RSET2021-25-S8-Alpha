@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earphone Listings - TechCompare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-gray: #f5f6fa;
+            --dark-gray: #2c3e50;
+            --light-blue: #3498db;
+            --dark-blue: #2980b9;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            margin: 0;
+            padding-top: 80px;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+        }
+
+        .dropdown-menu {
+            background-color: var(--primary-color);
+            border: none;
+        }
+
+        .dropdown-item {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .page-title {
+            color: var(--dark-gray);
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        .earphone-card {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .earphone-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .earphone-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 1rem;
+            background-color: var(--light-gray);
+        }
+
+        .earphone-info {
+            padding: 1.5rem;
+        }
+
+        .earphone-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .earphone-price {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .earphone-specs {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .spec-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+
+        .compare-btn {
+            background-color: var(--light-blue);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .compare-btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        .filters {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .form-check {
+            margin-bottom: 0.5rem;
+        }
+
+        .form-check-label {
+            color: var(--text-color);
+        }
+
+        .form-check-input:checked {
+            background-color: var(--light-blue);
+            border-color: var(--light-blue);
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-blue);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links .category-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-links .category-btn {
+            background: none;
+            border: none;
+            color: var(--light-blue);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links .category-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+        }
+
+        .nav-links .category-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links .dropdown-content a {
+            color: var(--light-blue);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links .dropdown-content a:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .account-link {
+            text-decoration: none;
+            color: var(--light-blue);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .account-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Notification styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 500;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .notification.show {
+            opacity: 1;
+        }
+
+        .notification.success {
+            background-color: #2ecc71;
+        }
+
+        .notification.error {
+            background-color: #e74c3c;
+        }
+
+        /* Favorite button styles */
+        .favorite-btn {
+            background-color: var(--light-blue);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0 0 5px 5px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0;
+        }
+
+        .favorite-btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        .favorite-btn i {
+            font-size: 1.2rem;
+        }
+
+        .favorite-btn.favorited {
+            background-color: var(--accent-color);
+        }
+
+        .favorite-btn.favorited:hover {
+            background-color: #c0392b;
+        }
+
+        .clickable-area {
+            cursor: pointer;
+            flex-grow: 1;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-left">
+            <div class="logo">SAVR</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <div class="category-dropdown">
+                    <button class="category-btn">Categories ▼</button>
+                    <div class="dropdown-content">
+                        <a href="/phones">Smartphones</a>
+                        <a href="/laptops">Laptops</a>
+                        <a href="/smartwatches">Smartwatches</a>
+                        <a href="/earphones">Earphones</a>
+                    </div>
+                </div>
+                <a href="/compare">Compare</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <a href="/accounts" class="account-link">Account</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Earphone Listings</h1>
+        
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-md-3">
+                <div class="filters">
+                    <h5 class="filter-title">Price Range</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="priceRange1">
+                        <label class="form-check-label" for="priceRange1">
+                            Under ₹10,000
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="priceRange2">
+                        <label class="form-check-label" for="priceRange2">
+                            ₹10,000 - ₹20,000
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="priceRange3">
+                        <label class="form-check-label" for="priceRange3">
+                            Over ₹20,000
+                        </label>
+                    </div>
+                    <hr>
+                    <h5 class="filter-title">Driver Size</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="driver1">
+                        <label class="form-check-label" for="driver1">
+                            Custom High-Excursion
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="driver2">
+                        <label class="form-check-label" for="driver2">
+                            Custom Apple
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="driver3">
+                        <label class="form-check-label" for="driver3">
+                            11mm + Planar
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="driver4">
+                        <label class="form-check-label" for="driver4">
+                            10mm Dynamic
+                        </label>
+                    </div>
+                    <hr>
+                    <h5 class="filter-title">Water Resistance</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="water1">
+                        <label class="form-check-label" for="water1">
+                            IP57
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="water2">
+                        <label class="form-check-label" for="water2">
+                            IPX7
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="water3">
+                        <label class="form-check-label" for="water3">
+                            IP55
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earphone Listings -->
+            <div class="col-md-9">
+                <div class="row" id="earphoneList">
+                    <!-- Earphone cards will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to format price with commas
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // Function to create earphone cards
+        function createEarphoneCards(earphones) {
+            const earphoneList = document.getElementById('earphoneList');
+            earphoneList.innerHTML = ''; // Clear existing cards
+
+            earphones.forEach(earphone => {
+                // Skip products with placeholder images
+                if (earphone.imageUrl === '/static/placeholder.jpg') {
+                    return;
+                }
+
+                // Get the lowest price from all stores
+                let lowestPrice = Infinity;
+                if (earphone.specs.Price && typeof earphone.specs.Price === 'object') {
+                    Object.values(earphone.specs.Price).forEach(price => {
+                        if (price < lowestPrice) {
+                            lowestPrice = price;
+                        }
+                    });
+                }
+
+                const card = document.createElement('div');
+                card.className = 'col-md-6 col-lg-4';
+                card.innerHTML = `
+                    <div class="earphone-card">
+                        <div class="clickable-area" onclick="window.location.href='/earphone_detail?name=${encodeURIComponent(earphone.name)}'">
+                            <img src="${earphone.imageUrl}" alt="${earphone.name}" class="earphone-image">
+                            <div class="earphone-info">
+                                <h3 class="earphone-name">${earphone.name}</h3>
+                                <div class="earphone-price">₹${formatPrice(lowestPrice)}</div>
+                                <div class="earphone-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Driver Size:</span> ${earphone.specs['Driver Size']}
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Battery Life:</span> ${earphone.specs['Battery Life']} hours
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Noise Cancellation:</span> ${earphone.specs['Noise Cancellation']}
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Water Resistance:</span> ${earphone.specs['Water Resistance']}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="favorite-btn" onclick="toggleFavorite('${earphone.name}', '${earphone.category}', '${earphone.imageUrl}', ${lowestPrice})">
+                            <i class="far fa-heart"></i>
+                            Add to Favorites
+                        </button>
+                    </div>
+                `;
+                earphoneList.appendChild(card);
+            });
+        }
+
+        // Function to show notifications
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            // Show notification
+            setTimeout(() => notification.classList.add('show'), 100);
+
+            // Hide and remove notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Function to toggle favorite status
+        async function toggleFavorite(name, category, imageUrl, price) {
+            try {
+                // Add to favorites
+                const response = await fetch('/add_to_favorites', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name,
+                        category,
+                        imageUrl,
+                        specs: { Price: price }
+                    })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    showNotification('Product added to favorites');
+                    // Update button appearance
+                    const button = document.querySelector(`button[onclick*="${name}"]`);
+                    if (button) {
+                        button.classList.add('favorited');
+                        button.innerHTML = '<i class="fas fa-heart"></i> Added to Favorites';
+                    }
+                } else {
+                    showNotification(data.error || 'Error adding to favorites', 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showNotification('Error adding to favorites', 'error');
+            }
+        }
+
+        // Function to filter earphones based on selected criteria
+        function filterEarphones(earphones) {
+            const priceRange1 = document.getElementById('priceRange1').checked;
+            const priceRange2 = document.getElementById('priceRange2').checked;
+            const priceRange3 = document.getElementById('priceRange3').checked;
+            const driver1 = document.getElementById('driver1').checked;
+            const driver2 = document.getElementById('driver2').checked;
+            const driver3 = document.getElementById('driver3').checked;
+            const driver4 = document.getElementById('driver4').checked;
+            const water1 = document.getElementById('water1').checked;
+            const water2 = document.getElementById('water2').checked;
+            const water3 = document.getElementById('water3').checked;
+
+            return earphones.filter(earphone => {
+                const price = earphone.specs.Price;
+                const driver = earphone.specs['Driver Size'].toLowerCase();
+                const water = earphone.specs['Water Resistance'].toLowerCase();
+
+                // Price range filters
+                let priceMatch = true;
+                if (priceRange1 || priceRange2 || priceRange3) {
+                    priceMatch = false;
+                    if (priceRange1 && price < 10000) priceMatch = true;
+                    if (priceRange2 && price >= 10000 && price <= 20000) priceMatch = true;
+                    if (priceRange3 && price > 20000) priceMatch = true;
+                }
+
+                // Driver size filters
+                let driverMatch = true;
+                if (driver1 || driver2 || driver3 || driver4) {
+                    driverMatch = false;
+                    if (driver1 && driver.includes('custom high-excursion')) driverMatch = true;
+                    if (driver2 && driver.includes('custom apple')) driverMatch = true;
+                    if (driver3 && driver.includes('11mm + planar')) driverMatch = true;
+                    if (driver4 && driver.includes('10mm dynamic')) driverMatch = true;
+                }
+
+                // Water resistance filters
+                let waterMatch = true;
+                if (water1 || water2 || water3) {
+                    waterMatch = false;
+                    if (water1 && water.includes('ip57')) waterMatch = true;
+                    if (water2 && water.includes('ipx7')) waterMatch = true;
+                    if (water3 && water.includes('ip55')) waterMatch = true;
+                }
+
+                return priceMatch && driverMatch && waterMatch;
+            });
+        }
+
+        let allEarphones = []; // Store all earphones globally
+
+        // Fetch earphones data when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/get_products');
+                const products = await response.json();
+                
+                // Filter only earphones
+                allEarphones = products.filter(product => product.category === "Earphones");
+                
+                // Display earphones
+                createEarphoneCards(allEarphones);
+                
+                // Add event listeners to filter checkboxes
+                document.querySelectorAll('.form-check-input').forEach(checkbox => {
+                    checkbox.addEventListener('change', () => {
+                        const filteredEarphones = filterEarphones(allEarphones);
+                        createEarphoneCards(filteredEarphones);
+                    });
+                });
+            } catch (error) {
+                console.error('Error fetching earphones:', error);
+                alert('Error loading earphones. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html> 

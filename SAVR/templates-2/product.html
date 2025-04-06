@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savr - Product Listings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main Content Styles */
+        .main-container {
+            max-width: 1200px;
+            margin: 8rem auto;
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* Filters Sidebar */
+        .filters {
+            width: 250px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .filter-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .price-range {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .brand-filter {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Product Grid */
+        .products-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff5d7, #FFD93D);
+            min-height: 100vh;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+
+            .filters {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-left">
+            <div class="logo">Savr</div>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">Categories</a>
+                    <div class="dropdown-content">
+                        <a href="#">Electronics</a>
+                        <a href="#">Fashion</a>
+                        <a href="#">Home & Living</a>
+                        <a href="#">Books</a>
+                    </div>
+                </div>
+                <a href="#">Laptops</a>
+                <a href="#">Mobiles</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <img src="/api/placeholder/32/32" alt="User Profile" class="profile-icon">
+                <div class="dropdown-content">
+                    <a href="#">My Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+ =
+        <aside class="filters">
+            <h2>Filters</h2>
+            
+            <div class="filter-section">
+                <h3>Price Range</h3>
+                <div class="price-range">
+                    <input type="range" id="price-slider" min="0" max="2000" value="2000">
+                    <div id="price-value">$0 - $2000</div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Brands</h3>
+                <div class="brand-filter">
+                    <label><input type="checkbox" value="apple"> Apple</label>
+                    <label><input type="checkbox" value="samsung"> Samsung</label>
+                    <label><input type="checkbox" value="dell"> Dell</label>
+                    <label><input type="checkbox" value="hp"> Asus</label>
+                    <label><input type="checkbox" value="hp"> Lenovo</label>
+                    <label><input type="checkbox" value="hp">Msi</label>
+                    <label><input type="checkbox" value="hp"> Acer</label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Release Date</h3>
+                <select id="release-date">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+            </div>
+        </aside>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="products-container">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Savr</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Smartphones</a></li>
+                    <li><a href="#">Tablets</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Buying Guide</a></li>
+                    <li><a href="#">Compare Tools</a></li>
+                    <li><a href="#">Support Center</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 Savr. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                name: 'XPS 16',
+                price: 1299,
+                brand: 'Dell',
+                image: `${window.location.origin}/dell xps.jpg`
+            },
+            {
+                id: 2,
+                name: 'Probook 450',
+                price: 699,
+                brand: 'HP',
+                image: `${window.location.origin}/hp probook 2022.jpg`
+            },
+            {
+                id: 3,
+                name: 'Macbook Pro 2024',
+                price: 1499,
+                brand: 'Apple',
+                image: `${window.location.origin}/macbook pro.jpg`  
+            },
+            // Add more products as needed
+        ];
+
+        // Function to render products
+        function renderProducts(productsToRender) {
+            const container = document.getElementById('products-container');
+            container.innerHTML = '';
+
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p>${product.brand}</p>
+                        <p class="product-price">$${product.price}</p>
+                    </div>
+                `;
+                container.appendChild(productCard);
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(products);
+
+            // Price slider functionality
+            const priceSlider = document.getElementById('price-slider');
+            const priceValue = document.getElementById('price-value');
+
+            priceSlider.addEventListener('input', (e) => {
+                const value = e.target.value;
+                priceValue.textContent = `$0 - $${value}`;
+                
+                const filteredProducts = products.filter(product => 
+                    product.price <= value
+                );
+                renderProducts(filteredProducts);
+            });
+
+            // Brand filter functionality
+            const brandCheckboxes = document.querySelectorAll('.brand-filter input');
+            brandCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    const selectedBrands = Array.from(brandCheckboxes)
+                        .filter(cb => cb.checked)
+                        .map(cb => cb.value);
+
+                    const filteredProducts = selectedBrands.length > 0
+                        ? products.filter(product => 
+                            selectedBrands.includes(product.brand.toLowerCase()))
+                        : products;
+
+                    renderProducts(filteredProducts);
+                });
+            });
+
+            // Release date sorting
+            document.getElementById('release-date').addEventListener('change', (e) => {
+                const sortedProducts = [...products].sort((a, b) => {
+                    return e.target.value === 'newest' ? b.id - a.id : a.id - b.id;
+                });
+                renderProducts(sortedProducts);
+            });
+        });
+    </script>
+</body>
+</html>

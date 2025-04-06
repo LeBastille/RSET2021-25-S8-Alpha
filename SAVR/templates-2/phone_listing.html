@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphones - TechCompare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-gray: #f5f6fa;
+            --dark-gray: #2c3e50;
+            --light-blue: #3498db;
+            --dark-blue: #2980b9;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            margin: 0;
+            padding-top: 80px;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+        }
+
+        .dropdown-menu {
+            background-color: var(--primary-color);
+            border: none;
+        }
+
+        .dropdown-item {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .page-title {
+            color: var(--dark-gray);
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 1rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-specs {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .compare-btn {
+            background-color: var(--light-blue);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .compare-btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-blue);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links .category-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-links .category-btn {
+            background: none;
+            border: none;
+            color: var(--light-blue);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links .category-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+        }
+
+        .nav-links .category-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links .dropdown-content a {
+            color: var(--light-blue);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links .dropdown-content a:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .account-link {
+            text-decoration: none;
+            color: var(--light-blue);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .account-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Filter Styles */
+        .filters {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-checkbox input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        .filter-checkbox label {
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .favorite-button {
+            background: none;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        
+        .favorite-button:hover {
+            color: var(--accent-color);
+        }
+        
+        .favorite-button.favorite-active {
+            color: var(--accent-color);
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-left">
+            <div class="logo">SAVR</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <div class="category-dropdown">
+                    <button class="category-btn">Categories ▼</button>
+                    <div class="dropdown-content">
+                        <a href="/phones">Smartphones</a>
+                        <a href="/laptops">Laptops</a>
+                        <a href="/smartwatches">Smartwatches</a>
+                        <a href="/earphones">Earphones</a>
+                    </div>
+                </div>
+                <a href="/compare">Compare</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <a href="/accounts" class="account-link">Account</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Smartphones</h1>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <div class="filters">
+                    <h3 class="filter-title">Filters</h3>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Price Range</label>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="price-under-20k" onchange="filterPhones()">
+                            <label for="price-under-20k">Under ₹20,000</label>
+                        </div>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="price-20k-40k" onchange="filterPhones()">
+                            <label for="price-20k-40k">₹20,000 - ₹40,000</label>
+                        </div>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="price-over-40k" onchange="filterPhones()">
+                            <label for="price-over-40k">Over ₹40,000</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Processor</label>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="processor-snapdragon" onchange="filterPhones()">
+                            <label for="processor-snapdragon">Snapdragon</label>
+                        </div>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="processor-mediatek" onchange="filterPhones()">
+                            <label for="processor-mediatek">MediaTek</label>
+                        </div>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="processor-exynos" onchange="filterPhones()">
+                            <label for="processor-exynos">Exynos</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Camera</label>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="camera-48mp" onchange="filterPhones()">
+                            <label for="camera-48mp">48MP or Higher</label>
+                        </div>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="camera-64mp" onchange="filterPhones()">
+                            <label for="camera-64mp">64MP or Higher</label>
+                        </div>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="camera-108mp" onchange="filterPhones()">
+                            <label for="camera-108mp">108MP or Higher</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+                <div class="product-grid" id="productGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to format price with commas
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // Function to create product card
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.onclick = () => window.location.href = `/phone_detail?name=${encodeURIComponent(product.name)}`;
+            
+            // Check if product is in favorites
+            fetch('/check_favorite', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: product.name,
+                    category: product.category
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const isFavorite = data.is_favorite;
+                card.innerHTML = `
+                    <img src="${product.imageUrl}" alt="${product.name}" class="product-image" onerror="this.onerror=null; this.src='https://placehold.co/300x200/png?text=${encodeURIComponent(product.name)}';">
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-price">₹${product.specs.Price.toLocaleString()}</p>
+                        <div class="product-actions">
+                            <button class="action-button favorite-button ${isFavorite ? 'favorite-active' : ''}" onclick="event.stopPropagation(); toggleFavorite('${product.name}', '${product.category}', this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            return card;
+        }
+
+        // Function to filter phones based on selected criteria
+        function filterPhones() {
+            const priceUnder20k = document.getElementById('price-under-20k').checked;
+            const price20k40k = document.getElementById('price-20k-40k').checked;
+            const priceOver40k = document.getElementById('price-over-40k').checked;
+            
+            const processorSnapdragon = document.getElementById('processor-snapdragon').checked;
+            const processorMediatek = document.getElementById('processor-mediatek').checked;
+            const processorExynos = document.getElementById('processor-exynos').checked;
+            
+            const camera48mp = document.getElementById('camera-48mp').checked;
+            const camera64mp = document.getElementById('camera-64mp').checked;
+            const camera108mp = document.getElementById('camera-108mp').checked;
+            
+            const productGrid = document.getElementById('productGrid');
+            productGrid.innerHTML = '';
+            
+            phones.forEach(phone => {
+                const price = phone.specs.Price;
+                const processor = phone.specs.Processor.toLowerCase();
+                const camera = phone.specs.Camera;
+                
+                let priceMatch = true;
+                if (priceUnder20k || price20k40k || priceOver40k) {
+                    priceMatch = false;
+                    if (priceUnder20k && price < 20000) priceMatch = true;
+                    if (price20k40k && price >= 20000 && price <= 40000) priceMatch = true;
+                    if (priceOver40k && price > 40000) priceMatch = true;
+                }
+                
+                let processorMatch = true;
+                if (processorSnapdragon || processorMediatek || processorExynos) {
+                    processorMatch = false;
+                    if (processorSnapdragon && processor.includes('snapdragon')) processorMatch = true;
+                    if (processorMediatek && processor.includes('mediatek')) processorMatch = true;
+                    if (processorExynos && processor.includes('exynos')) processorMatch = true;
+                }
+                
+                let cameraMatch = true;
+                if (camera48mp || camera64mp || camera108mp) {
+                    cameraMatch = false;
+                    const cameraMP = parseInt(camera);
+                    if (camera48mp && cameraMP >= 48) cameraMatch = true;
+                    if (camera64mp && cameraMP >= 64) cameraMatch = true;
+                    if (camera108mp && cameraMP >= 108) cameraMatch = true;
+                }
+                
+                if (priceMatch && processorMatch && cameraMatch) {
+                    productGrid.appendChild(createProductCard(phone));
+                }
+            });
+        }
+
+        // Load products when page loads
+        let phones = [];
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/get_products');
+                const products = await response.json();
+                phones = products.filter(p => p.category === 'Smartphones');
+                
+                // Display all phones initially
+                phones.forEach(phone => {
+                    document.getElementById('productGrid').appendChild(createProductCard(phone));
+                });
+            } catch (error) {
+                console.error('Error loading products:', error);
+            }
+        });
+
+        // Add this to your existing JavaScript
+        function toggleFavorite(productName, productCategory, button) {
+            const isFavorite = button.classList.contains('favorite-active');
+            const endpoint = isFavorite ? '/remove_from_favorites' : '/add_to_favorites';
+            
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: productName,
+                    category: productCategory
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    button.classList.toggle('favorite-active');
+                    const svg = button.querySelector('svg');
+                    if (isFavorite) {
+                        svg.setAttribute('fill', 'none');
+                    } else {
+                        svg.setAttribute('fill', 'currentColor');
+                    }
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
+ 
